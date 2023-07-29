@@ -65,7 +65,10 @@ router.post("/register", (req, res) => {
           password: hash,
         })
       )
-      .then(() => res.redirect("/"))
+      .then(() => {
+        req.flash("success_msg", "你已經註冊，請登入使用。");
+        res.redirect("/");
+      })
       .catch(err => console.log(err));
   });
 });
