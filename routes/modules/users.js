@@ -66,7 +66,7 @@ router.post("/register", (req, res) => {
         })
       )
       .then(() => {
-        req.flash("success_msg", "你已經註冊，請登入使用。");
+        req.flash("success_msg", "你已成功註冊，請登入使用。");
         res.redirect("/");
       })
       .catch(err => console.log(err));
